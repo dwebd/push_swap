@@ -6,7 +6,7 @@
 /*   By: dimirzoe <dimirzoe@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:13:40 by fishaq            #+#    #+#             */
-/*   Updated: 2024/09/14 13:32:50 by dimirzoe         ###   ########.fr       */
+/*   Updated: 2024/09/17 20:04:13 by dimirzoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int	error_reptition(t_stack_node *a, int nbr)
 static long	ft_atol(const char *str)
 {
 	long	num;
-	int		isng;
+	int		sing;
 	int		i;
 
 	num = 0;
-	isng = 1;
+	sing = 1;
 	i = 0;
 	while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
 			|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f'))
@@ -49,7 +49,7 @@ static long	ft_atol(const char *str)
 		i++;
 	else if (str[i] == '-')
 	{
-		isng *= -1;
+		sing *= -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
@@ -57,7 +57,7 @@ static long	ft_atol(const char *str)
 		num = (num * 10) + (str[i] - '0');
 		i++;
 	}
-	return (num * isng);
+	return (num * sing);
 }
 
 static void	append_node(t_stack_node **stack, int nbr)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_util.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fishaq <fishaq@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dimirzoe <dimirzoe@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:23:59 by fishaq            #+#    #+#             */
-/*   Updated: 2024/05/19 21:12:37 by fishaq           ###   ########.fr       */
+/*   Updated: 2024/09/17 12:13:03 by dimirzoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ t_stack_node	*find_last_node(t_stack_node *n)
 
 bool	stack_sorted(t_stack_node *stack)
 {
-	if (!stack)
-		return (1);
-	while (stack->next)
+	if(!stack)
+		return(1);
+	while(stack->next)
 	{
-		if (stack->nbr > stack->next->nbr)
-			return (false);
+		if(stack->nbr > stack->next->nbr)
+		return(false);
 		stack = stack->next;
 	}
-	return (true);
+	return(true);
 }
 
 int	stack_len(t_stack_node *a)

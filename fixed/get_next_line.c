@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fishaq <fishaq@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dimirzoe <dimirzoe@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 20:41:58 by fishaq            #+#    #+#             */
-/*   Updated: 2024/07/31 15:17:23 by fishaq           ###   ########.fr       */
+/*   Updated: 2024/09/21 18:21:29 by dimirzoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static char	*read_to_remaining(int fd, char *remaining)
 {
 	int		read_bytes;
 	char	*buffer;
-	char	*temp;	
+	char	*temp;
 
 	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
@@ -85,7 +85,7 @@ static char	*clear_stuffs_from_remaining(char *remaining)
 		free(remaining);
 		return (NULL);
 	}
-	new_remaining = malloc(ft_stlen(remaining) - i + 1);
+	new_remaining = malloc(ft_strlen(remaining) - i + 1);
 	if (!new_remaining)
 	{
 		free(remaining);

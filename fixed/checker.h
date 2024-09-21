@@ -6,7 +6,7 @@
 /*   By: dimirzoe <dimirzoe@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 14:49:54 by fishaq            #+#    #+#             */
-/*   Updated: 2024/09/14 16:10:46 by dimirzoe         ###   ########.fr       */
+/*   Updated: 2024/09/21 18:21:58 by dimirzoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ typedef struct s_list
 }					t_list;
 
 char				*get_next_line(int fd);
-int				ft_stlen(char const *str);
+int				ft_strlen(char const *str);
 char				*ft_strchr(char const *str, int c);
 char				*ft_strcpy(char *dest, char *src);
-char				*ft_strdup(char const *src);
+// char				*ft_strdup(char const *src);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				**get_strings(int ac, char **av);
 char				*concat(int ac, char **av, int *len);

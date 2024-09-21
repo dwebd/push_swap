@@ -6,7 +6,7 @@
 /*   By: dimirzoe <dimirzoe@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 22:33:47 by fishaq            #+#    #+#             */
-/*   Updated: 2024/09/14 14:25:01 by dimirzoe         ###   ########.fr       */
+/*   Updated: 2024/09/21 19:42:29 by dimirzoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }						t_stack_node;
 
+size_t					ft_strlen(const char *s);
+size_t					ft_strlcpy(char *dst, const char *src, size_t dstsize);
+char					*ft_strdup(const char *s1);
+char					*ft_substr(char const *s, unsigned int start, size_t len);
 int						error_syntax(char *str);
 int						error_reptition(t_stack_node *a, int nbr);
 void					free_stack(t_stack_node **stack);
@@ -72,5 +76,6 @@ void					sb(t_stack_node **b, bool print);
 void					ss(t_stack_node **a, t_stack_node **b, bool print);
 void					pb(t_stack_node **b, t_stack_node **a, bool print);
 void					pa(t_stack_node **a, t_stack_node **b, bool print);
+char					*ft_strdup(const char *s1);
 
 #endif

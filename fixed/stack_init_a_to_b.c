@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init_a_to_b.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fishaq <fishaq@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dimirzoe <dimirzoe@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 17:21:29 by fishaq            #+#    #+#             */
-/*   Updated: 2024/05/22 14:31:46 by fishaq           ###   ########.fr       */
+/*   Updated: 2024/09/19 20:30:22 by dimirzoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,16 @@ void	current_index(t_stack_node *stack)
 
 static void	set_target_a(t_stack_node *a, t_stack_node *b)
 {
-	t_stack_node	*current_b;
 	t_stack_node	*target_node;
+	t_stack_node	*current_b;
 	long			best;
-
-	while (a)
+	while(a)
 	{
 		best = LONG_MIN;
 		current_b = b;
-		while (current_b)
+		while(current_b)
 		{
-			if (current_b->nbr < a->nbr && current_b->nbr > best)
+			if(current_b->nbr < a->nbr && current_b->nbr > best)
 			{
 				best = current_b->nbr;
 				target_node = current_b;
@@ -58,26 +57,31 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 			a->target_node = target_node;
 		a = a->next;
 	}
+
+
 }
 
 static void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 {
-	int	len_a;
-	int	len_b;
+	int len_a;
+	int len_b;
 
 	len_a = stack_len(a);
 	len_b = stack_len(b);
-	while (a)
+	while(a)
 	{
-		a->push_cost = a->index;
-		if (!(a->above_median))
+		a->push_cost= a->index;
+		if(!(a->above_median))
 			a->push_cost = len_a - (a->index);
-		if (a->target_node->above_median)
+		if(a->target_node->above_median)
 			a->push_cost += a->target_node->index;
 		else
-			a->push_cost += len_b - (a->target_node->index);
+			a->push_cost +=len_b - (a->target_node->index);
 		a = a->next;
+
+
 	}
+
 }
 
 void	set_cheapest(t_stack_node *s)
@@ -85,19 +89,18 @@ void	set_cheapest(t_stack_node *s)
 	long			cheap;
 	t_stack_node	*cheap_node;
 
-	if (!s)
+	if(!s)
 		return ;
 	cheap = LONG_MAX;
-	while (s)
+	while(s)
 	{
-		if (s->push_cost < cheap)
+		if(s->push_cost < cheap)
 		{
 			cheap = s->push_cost;
 			cheap_node = s;
 		}
 		s = s->next;
 	}
-	cheap_node->cheapest = true;
 }
 
 void	init_nodesa(t_stack_node *a, t_stack_node *b)

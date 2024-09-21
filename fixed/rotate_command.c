@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_command.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fishaq <fishaq@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dimirzoe <dimirzoe@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:52:17 by fishaq            #+#    #+#             */
-/*   Updated: 2024/05/22 17:49:15 by fishaq           ###   ########.fr       */
+/*   Updated: 2024/09/21 20:19:28 by dimirzoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	rotate(t_stack_node **a)
 }
 
 void	ra(t_stack_node **a, bool print)
-{
+{ 
 	rotate(a);
 	if (!print)
 		ft_printf("ra\n");

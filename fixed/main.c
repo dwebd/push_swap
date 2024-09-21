@@ -6,7 +6,7 @@
 /*   By: dimirzoe <dimirzoe@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 22:16:40 by fishaq            #+#    #+#             */
-/*   Updated: 2024/09/14 16:10:39 by dimirzoe         ###   ########.fr       */
+/*   Updated: 2024/09/21 20:10:34 by dimirzoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,6 @@ void	check_spaces(int ac, char **av)
 	}
 }
 
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != 0)
-	{
-		i++;
-	}
-	return (i);
-}
 
 char	*concat(int ac, char **av, int *len)
 {
@@ -96,12 +85,12 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	str = NULL;
-	if (ac == 1 || (2 == ac && !av[1][0]))
-		return (1);
+	if (ac == 1)
+		return (0);
 	check_spaces(ac, av);
 	if (ac >= 2)
 		str = get_strings(ac, av);
-	stack_init(&a, (str), str);
+		stack_init(&a, str, str);
 	if (!stack_sorted(a))
 	{
 		if (stack_len(a) == 2)

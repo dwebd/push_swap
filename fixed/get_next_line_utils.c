@@ -12,16 +12,6 @@
 
 #include "checker.h"
 
-size_t	ft_stlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s && s[i])
-		i++;
-	return (i);
-}
-
 char	*ft_strchr(const char *s, int c)
 {
 	if (!s)
@@ -32,24 +22,6 @@ char	*ft_strchr(const char *s, int c)
 	return ((char *)s);
 }
 
-char	*ft_strdup(const char *s1)
-{
-	char	*s2;
-	size_t	i;
-
-	s2 = malloc(ft_stlen(s1) + 1);
-	if (!s2)
-		return (NULL);
-	i = 0;
-	while (s1[i])
-	{
-		s2[i] = s1[i];
-		i++;
-	}
-	s2[i] = '\0';
-	return (s2);
-}
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ps1;
@@ -58,7 +30,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 && !s2)
 		return (0);
-	tlen = ft_stlen(s1) + ft_stlen(s2);
+	tlen = ft_strlen(s1) + ft_strlen(s2);
 	ps1 = malloc(sizeof(char) * (tlen + 1));
 	if (!ps1)
 		return (NULL);
